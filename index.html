@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List - Assignment</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>To-Do List</h1>
+    <!-- Creating the input files inside form element -->
+    <form action="" id="add-todo" onsubmit="addTodo(); return false;">
+        <input type="text" id="new-todo"fdf placeholder="Add a new task">
+        <button type="submit" id="add-button">Add</button>
+    </form>
+    <div>
+        <h4>Tasks</h4>
+    </div>
+    <ul id="todo-list"></ul>
+    <script>
+        // get reference to the necessary HTML elements
+
+        let todoList = document.getElementById("todo-list");
+        let newTodo = document.getElementById("new-todo");
+
+        // Add a new to-do item
+        function addTodo() {
+            let li = document.createElement("li");
+            li.innerHTML = newTodo.value;
+            todoList.appendChild(li);
+            newTodo.value=""; 
+        }
+
+        // remove an item
+
+        todoList.addEventListener("click", function(element) {
+            element.target.remove();
+        })
+    </script>
+
+</body>
+
+</html>
